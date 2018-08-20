@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_SRV || "mongodb+srv://vrhouseuser:m123456@vrhousecluster-zuhho.mongodb.net/test?retryWrites=true", function (err, database) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://vrhouseuser:m123456@vrhousecluster-shard-00-00-zuhho.mongodb.net:27017,vrhousecluster-shard-00-01-zuhho.mongodb.net:27017,vrhousecluster-shard-00-02-zuhho.mongodb.net:27017/test?ssl=true&replicaSet=vrhousecluster-shard-0&authSource=admin&retryWrites=true", function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
